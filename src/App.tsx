@@ -9,11 +9,13 @@ import XIcon from "./assets/icons/x.svg?react"
 import Icon from "./components/icon"
 import Badge from "./components/badge"
 import Button from "./components/button"
+import ButtonIcon from "./components/button-icon"
+import InputText from "./components/input-text"
 
 export default function App() {
 
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-10">
       <div className="flex flex-col gap-2">
         <Text variant="body-sm-bold" className="text-pink-base">
           Olá mundo!
@@ -39,6 +41,16 @@ export default function App() {
 
       <div>
         <Button icon={PlusIcon}>Nova tarefa</Button>
+      </div>
+
+      <div className="flex gap-1">
+        <ButtonIcon icon={TrashIcon} />
+        <ButtonIcon icon={TrashIcon} variant="secondary"/>
+        <ButtonIcon icon={TrashIcon} variant="tertiary"/>
+      </div>
+
+      <div>
+        <InputText />
       </div>
     </div >
   )
