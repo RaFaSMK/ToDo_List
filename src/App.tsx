@@ -12,6 +12,7 @@ import Button from "./components/button"
 import ButtonIcon from "./components/button-icon"
 import InputText from "./components/input-text"
 import InputCheckbox from "./components/input-checkbox"
+import Card from "./components/card"
 
 export default function App() {
 
@@ -27,7 +28,7 @@ export default function App() {
       </div>
 
       <div className="flex gap-1">
-        <Icon svg={TrashIcon} className="fill-green-base"/>
+        <Icon svg={TrashIcon} className="fill-green-base" />
         <Icon svg={CheckIcon} />
         <Icon svg={PlusIcon} />
         <Icon svg={SpinnerIcon} animate />
@@ -46,8 +47,8 @@ export default function App() {
 
       <div className="flex gap-1">
         <ButtonIcon icon={TrashIcon} />
-        <ButtonIcon icon={TrashIcon} variant="secondary"/>
-        <ButtonIcon icon={TrashIcon} variant="tertiary"/>
+        <ButtonIcon icon={TrashIcon} variant="secondary" />
+        <ButtonIcon icon={TrashIcon} variant="tertiary" />
       </div>
 
       <div>
@@ -56,6 +57,10 @@ export default function App() {
 
       <div>
         <InputCheckbox />
+      </div>
+
+      <div>
+        <Card size="md"> Olá mundo! </Card>
       </div>
     </div >
   )
