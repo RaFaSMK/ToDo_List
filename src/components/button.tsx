@@ -67,14 +67,15 @@ export default function Button({
   icon: IconComponent, // Customizado
   ...props
 }: ButtonProps) {
-  return ( 
-    <button 
-    className={buttonVariants({
-      variant, 
-      size, 
-      disabled, 
-      className})}
-    {...props}
+  return (
+    <button
+      className={buttonVariants({
+        variant,
+        size,
+        disabled,
+        className
+      })}
+      {...props}
     >
       {IconComponent && (
         <Icon
