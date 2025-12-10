@@ -17,5 +17,5 @@ export default function Footer() {
         </NavLink>
       </nav>
     </footer>
-  )
+  );
 }

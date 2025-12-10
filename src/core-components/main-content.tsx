@@ -1,7 +1,7 @@
 import type React from "react";
 import { cx } from "class-variance-authority";
 
-interface MainContentProps extends React.ComponentProps<"main"> { }
+interface MainContentProps extends React.ComponentProps<"main"> {}
 
 export default function MainContent({
   children,
@@ -12,5 +12,5 @@ export default function MainContent({
     <main className={cx("mt-4 md:mt-8", className)} {...props}>
       {children}
     </main>
-  )
+  );
 }

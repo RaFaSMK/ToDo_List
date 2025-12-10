@@ -1,19 +1,19 @@
-import Text from "../components/text"
-import TrashIcon from "../assets/icons/trash.svg?react"
-import CheckIcon from "../assets/icons/check.svg?react"
-import PencilIcon from "../assets/icons/pencil.svg?react"
-import PlusIcon from "../assets/icons/plus.svg?react"
-import SpinnerIcon from "../assets/icons/spinner.svg?react"
-import XIcon from "../assets/icons/x.svg?react"
-import Icon from "../components/icon"
-import Badge from "../components/badge"
-import Button from "../components/button"
-import ButtonIcon from "../components/button-icon"
-import InputText from "../components/input-text"
-import InputCheckbox from "../components/input-checkbox"
-import Card from "../components/card"
-import Container from "../components/container"
-import Skeleton from "../components/skeleton"
+import Text from "../components/text";
+import TrashIcon from "../assets/icons/trash.svg?react";
+import CheckIcon from "../assets/icons/check.svg?react";
+import PencilIcon from "../assets/icons/pencil.svg?react";
+import PlusIcon from "../assets/icons/plus.svg?react";
+import SpinnerIcon from "../assets/icons/spinner.svg?react";
+import XIcon from "../assets/icons/x.svg?react";
+import Icon from "../components/icon";
+import Badge from "../components/badge";
+import Button from "../components/button";
+import ButtonIcon from "../components/button-icon";
+import InputText from "../components/input-text";
+import InputCheckbox from "../components/input-checkbox";
+import Card from "../components/card";
+import Container from "../components/container";
+import Skeleton from "../components/skeleton";
 
 export default function PageComponents() {
   return (
@@ -40,7 +40,9 @@ export default function PageComponents() {
         <div className="flex gap-1">
           <Badge variant="secondary">5</Badge>
           <Badge variant="primary">2 de 5</Badge>
-          <Badge loading variant="primary">5</Badge>
+          <Badge loading variant="primary">
+            5
+          </Badge>
         </div>
 
         <div>
@@ -73,8 +75,7 @@ export default function PageComponents() {
           <Skeleton className="h-6" />
           <Skeleton className="w-96 h-6" />
         </div>
-
-      </div >
+      </div>
     </Container>
-  )
+  );
 }

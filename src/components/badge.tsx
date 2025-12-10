@@ -3,22 +3,25 @@ import Text from "./text";
 import { cva, cx, type VariantProps } from "class-variance-authority";
 import Skeleton from "./skeleton";
 
-export const badgeVariants = cva("inline-flex items-center justify-center rounded-full", {
-  variants: {
-    variant: {
-      none: "",
-      primary: "bg-green-light",
-      secondary: "bg-pink-light"
+export const badgeVariants = cva(
+  "inline-flex items-center justify-center rounded-full",
+  {
+    variants: {
+      variant: {
+        none: "",
+        primary: "bg-green-light",
+        secondary: "bg-pink-light",
+      },
+      size: {
+        sm: "py-0.5 px-2",
+      },
     },
-    size: {
-      sm: "py-0.5 px-2"
-    }
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "sm"
+    defaultVariants: {
+      variant: "primary",
+      size: "sm",
+    },
   }
-})
+);
 
 export const badgeTextVariants = cva("", {
   variants: {
@@ -26,28 +29,28 @@ export const badgeTextVariants = cva("", {
       none: "",
       primary: "text-green-dark",
       secondary: "text-pink-dark",
-    }
+    },
   },
   defaultVariants: {
-    variant: "primary"
-  }
-})
+    variant: "primary",
+  },
+});
 
 export const badgeSkeletonVariants = cva("", {
   variants: {
     size: {
-      sm: "w-6 h-6"
-    }
+      sm: "w-6 h-6",
+    },
   },
   defaultVariants: {
-    size: "sm"
-  }
-})
+    size: "sm",
+  },
+});
 
 interface BadgeProps
   extends React.ComponentProps<"div">,
-  VariantProps<typeof badgeVariants> {
-  loading?: boolean,
+    VariantProps<typeof badgeVariants> {
+  loading?: boolean;
 }
 
 export default function Badge({
@@ -58,16 +61,17 @@ export default function Badge({
   loading,
   ...props
 }: BadgeProps) {
-
   if (loading) {
-    return <Skeleton
-      rounded="full"
-      className={cx(
-        badgeVariants({ variant: "none" }),
-        badgeSkeletonVariants({ size }),
-        className
-      )}
-    />
+    return (
+      <Skeleton
+        rounded="full"
+        className={cx(
+          badgeVariants({ variant: "none" }),
+          badgeSkeletonVariants({ size }),
+          className
+        )}
+      />
+    );
   }
 
   return (
@@ -76,5 +80,5 @@ export default function Badge({
         {children}
       </Text>
     </div>
-  )
+  );
 }

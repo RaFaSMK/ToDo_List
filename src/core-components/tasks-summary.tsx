@@ -1,7 +1,6 @@
 import Badge from "../components/badge";
 import Text from "../components/text";
 
-
 export default function TasksSummary() {
   return (
     <>
@@ -18,5 +17,5 @@ export default function TasksSummary() {
         </Text>
       </div>
     </>
-  )
+  );
 }

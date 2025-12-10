@@ -3,59 +3,61 @@ import Icon from "./icon";
 import { cva, type VariantProps } from "class-variance-authority";
 import Text from "./text";
 
-export const buttonVariants = cva(`
+export const buttonVariants = cva(
+  `
   flex items-center justify-center cursor-pointer
   transition rounded-lg group gap-2  
-`, {
-  variants: {
-    variant: {
-      primary: "bg-gray-200 hover:bg-pink-light"
+`,
+  {
+    variants: {
+      variant: {
+        primary: "bg-gray-200 hover:bg-pink-light",
+      },
+      size: {
+        md: "h-14 py-4 px-5",
+      },
+      disabled: {
+        true: "opacity-50 pointer-events-none",
+      },
     },
-    size: {
-      md: "h-14 py-4 px-5"
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+      disabled: false,
     },
-    disabled: {
-      true: "opacity-50 pointer-events-none"
-    }
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "md",
-    disabled: false
   }
-}
-)
+);
 
 export const buttonIconVariants = cva("transition", {
   variants: {
     variant: {
-      primary: "fill-pink-base"
+      primary: "fill-pink-base",
     },
     size: {
-      md: "w-5 h-5"
-    }
+      md: "w-5 h-5",
+    },
   },
   defaultVariants: {
     variant: "primary",
-    size: "md"
-  }
-})
+    size: "md",
+  },
+});
 
 export const buttonTextVariants = cva("", {
   variants: {
     variant: {
-      primary: "text-gray-400"
-    }
+      primary: "text-gray-400",
+    },
   },
   defaultVariants: {
-    variant: "primary"
-  }
-})
+    variant: "primary",
+  },
+});
 
 interface ButtonProps
   extends Omit<React.ComponentProps<"button">, "size" | "disabled">,
-  VariantProps<typeof buttonVariants> {
-  icon?: React.ComponentProps<typeof Icon>["svg"],
+    VariantProps<typeof buttonVariants> {
+  icon?: React.ComponentProps<typeof Icon>["svg"];
 }
 
 export default function Button({
@@ -73,7 +75,7 @@ export default function Button({
         variant,
         size,
         disabled,
-        className
+        className,
       })}
       {...props}
     >
@@ -87,5 +89,5 @@ export default function Button({
         {children}
       </Text>
     </button>
-  )
+  );
 }

@@ -10,18 +10,19 @@ export const cardVariants = cva(
     variants: {
       size: {
         none: "",
-        md: "p-5"
-      }
+        md: "p-5",
+      },
     },
     defaultVariants: {
-      size: "none"
-    }
+      size: "none",
+    },
   }
-)
+);
 
-interface CardProps extends VariantProps<typeof cardVariants>,
-  React.ComponentProps<"div"> {
-  as?: keyof React.JSX.IntrinsicElements
+interface CardProps
+  extends VariantProps<typeof cardVariants>,
+    React.ComponentProps<"div"> {
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export default function Card({
@@ -35,8 +36,8 @@ export default function Card({
     as,
     {
       className: cardVariants({ size, className }),
-      ...props
+      ...props,
     },
     children
-  )
+  );
 }

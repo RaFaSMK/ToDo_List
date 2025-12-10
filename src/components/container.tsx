@@ -4,17 +4,18 @@ import React from "react";
 export const containerVariants = cva("mx-auto", {
   variants: {
     size: {
-      md: "max-w-[31.5rem] px-2"
-    }
+      md: "max-w-[31.5rem] px-2",
+    },
   },
   defaultVariants: {
-    size: "md"
-  }
-})
+    size: "md",
+  },
+});
 
-interface ContainerProps extends VariantProps<typeof containerVariants>,
-  React.ComponentProps<"div"> {
-  as?: keyof React.JSX.IntrinsicElements
+interface ContainerProps
+  extends VariantProps<typeof containerVariants>,
+    React.ComponentProps<"div"> {
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export default function Container({
@@ -27,8 +28,8 @@ export default function Container({
     as,
     {
       className: containerVariants({ size: "md", className }),
-      ...props
+      ...props,
     },
     children
-  )
+  );
 }
