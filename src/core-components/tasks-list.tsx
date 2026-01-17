@@ -25,7 +25,7 @@ export default function TasksLists() {
           disabled={tasks.some((task) => task.state === TaskState.Creating)}
         >
           Nova Tarefa
-        </Button>
+        </Button> 
       </section>
 
       <section className="space-y-2">
